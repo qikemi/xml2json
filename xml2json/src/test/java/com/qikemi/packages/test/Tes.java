@@ -3,7 +3,9 @@ package com.qikemi.packages.test;
 import org.junit.Test;
 
 import com.qikemi.packages.test.bean.Message;
-import com.qikemi.packages.xmlandjson.Xml2JavaBean;
+import com.qikemi.packages.xmlJsonAndJavaBean.JavaBean2Json;
+import com.qikemi.packages.xmlJsonAndJavaBean.JavaBean2Xml;
+import com.qikemi.packages.xmlJsonAndJavaBean.Xml2JavaBean;
 
 /**
  * 
@@ -24,6 +26,13 @@ public class Tes {
 		System.out.println(message.getCreateTime());
 		System.out.println(message.getMsgType());
 //		System.out.println(message.getMsgId());
+	}
+	
+	@Test
+	public void tes2s(){
+		Message message = new Message("fromUserName", "msgId", "createTime", "content", "toUserName", "msgType");
+		System.out.println(JavaBean2Xml.convert2Xml(message, "xml"));
 		
 	}
+	
 }
