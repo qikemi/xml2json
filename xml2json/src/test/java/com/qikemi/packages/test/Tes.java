@@ -21,16 +21,13 @@ public class Tes {
 		Message message = (Message) Xml2JavaBean.convert2JavaBean(xml, Message.class);
 		
 		System.out.println(message.getFromUserName());
-		System.out.println(message.getToUserName());
-//		System.out.println(message.getContent());
 		System.out.println(message.getCreateTime());
 		System.out.println(message.getMsgType());
-//		System.out.println(message.getMsgId());
 	}
 	
 	@Test
 	public void tes2s(){
-		Message message = new Message("fromUserName", "msgId", "createTime", "content", "toUserName", "msgType");
+		Message message = new Message("fromUserName", "createTime", "msgType");
 		System.out.println(JavaBean2Xml.convert2Xml(message, "xml"));
 		
 	}
