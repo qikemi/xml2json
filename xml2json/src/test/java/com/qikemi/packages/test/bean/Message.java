@@ -1,26 +1,24 @@
 package com.qikemi.packages.test.bean;
 
+import com.thoughtworks.xstream.annotations.XStreamAlias;
+
 public class Message {
 
+	@XStreamAlias("fromUserName")
 	private String FromUserName;
-//	private String MsgId;
+	@XStreamAlias("createTime")
 	private String CreateTime;
-//	private String Content;
-	private String ToUserName;
+	@XStreamAlias("type")
 	private String MsgType;
 	
 	public Message() {
 		super();
 	}
 	
-	public Message(String fromUserName, String msgId, String createTime,
-			String content, String toUserName, String msgType) {
+	public Message(String fromUserName, String createTime, String msgType) {
 		super();
 		FromUserName = fromUserName;
-//		MsgId = msgId;
 		CreateTime = createTime;
-//		Content = content;
-		ToUserName = toUserName;
 		MsgType = msgType;
 	}
 	
@@ -30,29 +28,11 @@ public class Message {
 	public void setFromUserName(String fromUserName) {
 		FromUserName = fromUserName;
 	}
-//	public String getMsgId() {
-//		return MsgId;
-//	}
-//	public void setMsgId(String msgId) {
-//		MsgId = msgId;
-//	}
 	public String getCreateTime() {
 		return CreateTime;
 	}
 	public void setCreateTime(String createTime) {
 		CreateTime = createTime;
-	}
-//	public String getContent() {
-//		return Content;
-//	}
-//	public void setContent(String content) {
-//		Content = content;
-//	}
-	public String getToUserName() {
-		return ToUserName;
-	}
-	public void setToUserName(String toUserName) {
-		ToUserName = toUserName;
 	}
 	public String getMsgType() {
 		return MsgType;
